@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const NavLinks = (props) => {
   return (
     <>
-      <div className="nav-links-links">
+      <div className={`nav-links-links ${props.rootClassName} `}>
         <span className="navLink">{props.Link}</span>
         <span className="navLink">{props.Link1}</span>
         <span className="navLink">{props.Link2}</span>
@@ -20,6 +20,7 @@ const NavLinks = (props) => {
             flex-direction: row;
             justify-content: center;
           }
+
           @media (max-width: 767px) {
             .nav-links-links {
               display: none;
@@ -35,12 +36,14 @@ NavLinks.defaultProps = {
   Link1: 'services',
   Link: 'work',
   Link2: 'contact',
+  rootClassName: '',
 }
 
 NavLinks.propTypes = {
   Link1: PropTypes.string,
   Link: PropTypes.string,
   Link2: PropTypes.string,
+  rootClassName: PropTypes.string,
 }
 
 export default NavLinks
